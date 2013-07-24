@@ -2,7 +2,8 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = current_user.exercises
+    @exercise = Exercise.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,6 +30,7 @@ class ExercisesController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exercise }
+      format.js { render layout: false }
     end
   end
 
@@ -40,15 +42,24 @@ class ExercisesController < ApplicationController
   # POST /exercises
   # POST /exercises.json
   def create
-    @exercise = Exercise.new(params[:exercise])
+    @exercise = current_user.exercises.build(params[:exercise])
 
     respond_to do |format|
       if @exercise.save
         format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }
         format.json { render json: @exercise, status: :created, location: @exercise }
+        format.js{ 
+          @exercises = current_user.exercises
+          @success = true 
+          render layout: false 
+        }
       else
         format.html { render action: "new" }
         format.json { render json: @exercise.errors, status: :unprocessable_entity }
+        format.js{ 
+          @success = false 
+          render layout: false 
+        }
       end
     end
   end
@@ -78,6 +89,15 @@ class ExercisesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to exercises_url }
       format.json { head :no_content }
+    end
+  end
+
+  def data
+    @data = current_user.exercises.where(:activity => params[:activity]).order("completed ASC")
+    respond_to do |format|
+      format.json {
+        render json: @data.to_json
+      }
     end
   end
 end

@@ -1,27 +1,18 @@
-%h1 Listing exercises
+.row
+  .large-12.columns
+    %h1 Listing exercises
 
-%table
-  %tr
-    %th Activity
-    %th Value
-    %th Units
-    %th Completed
-    %th User
-    %th
-    %th
-    %th
+    = select_tag "Activity", options_for_select(current_user.exercises.pluck(:activity).uniq.map{|x| [x, x]})
+    = link_to 'New Exercise', new_exercise_path, remote: true, data:{"reveal-id" => "new_exercise"}
 
-  - @exercises.each do |exercise|
-    %tr
-      %td= exercise.activity
-      %td= exercise.value
-      %td= exercise.units
-      %td= exercise.completed
-      %td= exercise.user
-      %td= link_to 'Show', exercise
-      %td= link_to 'Edit', edit_exercise_path(exercise)
-      %td= link_to 'Destroy', exercise, method: :delete, data: { confirm: 'Are you sure?' }
+    #user_exercises 
+      = render partial:"exercises"
 
-%br
+.row
+  .large-12.columns
+    #chart
+#new_exercise.reveal-modal
 
-= link_to 'New Exercise', new_exercise_path
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>

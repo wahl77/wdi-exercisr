@@ -1,0 +1,6 @@
+<% if @success %> 
+$("#new_exercise").foundation('reveal', 'close');
+$('#user_exercises').empty().append("<%= j render partial:'exercises' %>");
+<% else %> 
+alert("Eror");
+<% end %>

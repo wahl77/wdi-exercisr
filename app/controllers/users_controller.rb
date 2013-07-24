@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.js { render layout: false }
       format.json { render json: @user }
     end
   end
@@ -46,8 +47,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        @users = User.all
         format.html { redirect_to(:users, :notice => 'User was successfully created.') }
         format.json { render json: @user, status: :created, location: @user }
+        format.js {render layout: false}
       else
         format.html { render action: "new" }
         format.json { render json: @user.errors, status: :unprocessable_entity }

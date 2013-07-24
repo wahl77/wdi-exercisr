@@ -44,3 +44,4 @@ gem 'unicorn'
 gem 'quiet_assets'
 
 gem 'sorcery'
+gem 'pry-rails'
