@@ -1,0 +1,16 @@
+.row
+  .large-12.columns
+    %h1 All exercises
+
+    - @exercises.each do |exercise|
+      = link_to exercise.activity, exercise_path(exercise)
+
+
+
+    %br
+    %br
+    %br
+    %h3 New Exercise
+    = render partial:"form"
+
+

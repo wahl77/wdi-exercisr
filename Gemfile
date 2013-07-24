@@ -43,3 +43,16 @@ gem 'unicorn'
 gem 'quiet_assets'
 
 gem 'sorcery'
+
+group :development do
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'pry-debugger'
+end
