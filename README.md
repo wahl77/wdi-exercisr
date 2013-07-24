@@ -27,14 +27,15 @@ Your Tasks:
 
 **Pause**
 
-We'll build user login/logout with AJAX together.
+We'll build user signup with AJAX together.
 
 **Unpause**
 
-4. Create an ExercisesController. On exercises#index, show all the exercises for a logged-in user.
-5. Don't neglect the front-end: Add a nav item for Exercises.
-6. Add a 'New Exercise' button and implement a feature to add exercises using AJAX.
-7. Add a dropdown menu that shows of all the activities (meaning types of exercises) that the logged-in user has performed.
+4. Build Login/Logout with AJAX.
+5. Create an ExercisesController. On exercises#index, show all the exercises for a logged-in user.
+6. Don't neglect the front-end: Add a nav item for Exercises.
+7. Add a 'New Exercise' button and implement a feature to add exercises using AJAX.
+8. Add a dropdown menu that shows of all the activities (meaning types of exercises) that the logged-in user has performed.
 
 (The dropdown menu you're adding shouldn't do anything yet. It should just exist.)
 
@@ -44,4 +45,4 @@ Together, we'll add an AJAX call to get exercise data related to the selected ac
 
 **Unpause**
 
-8. Write code for the 'done' callback that adds a Morris JS chart to the page using the exercise data for the selected activity.
+9. Write code for the 'done' callback that adds a Morris JS chart to the page using the exercise data for the selected activity.
