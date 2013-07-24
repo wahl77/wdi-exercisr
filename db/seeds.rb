@@ -1,7 +1,44 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+users = User.create([
+  {email: "foo@sumeetjain.com", password: "jijiji"},
+  {email: "bar@sumeetjain.com", password: "jijiji"},
+  {email: "sumeet@sumeetjain.com", password: "jijiji"}
+])
+
+users.each do |user|
+  user.exercises.create([
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "running", :completed => (Date.today - (1..20).to_a.sample), :units => "miles", :value => (1..10).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "pushups", :completed => (Date.today - (1..20).to_a.sample), :units => "individual", :value => (1..100).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample},
+    {:activity => "yoga", :completed => (Date.today - (1..10).to_a.sample), :units => "minutes", :value => (30..120).to_a.sample}
+  ])
+end
