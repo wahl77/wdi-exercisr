@@ -11,7 +11,7 @@ DB_PASS=yours
 We're going to build an exercise app with jQuery, AJAX, and some graphing. Users will will track their exercises. A user has many exercises and an exercise belongs to a user.
 
 ```ruby
-# User: name, email, password_digest
+# User: email, password (This is already done.)
 # Exercise: activity (run), value (5), units (miles), completed (date)
 
 # Example:
